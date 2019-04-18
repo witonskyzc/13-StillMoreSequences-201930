@@ -14,11 +14,11 @@ combining these patterns, but this is a good base upon which to build.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Zach Witonsky.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 # -----------------------------------------------------------------------------
-# TODO: 2. SKIM the program below and RUN it.
+# DONE: 2. SKIM the program below and RUN it.
 #
 #   Then look more closely at the CODE for:
 #     -- find_example1
@@ -41,7 +41,6 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 # -----------------------------------------------------------------------------
 
 import math
-
 
 def main():
     """ Demonstrates some patterns for ITERATING through SEQUENCES. """
@@ -129,7 +128,6 @@ def main():
     answer = two_sequences_in_parallel(seq1, seq2)
     print('The 2nd sequence exceeds the 1st at', answer, 'places.')
 
-
 # -----------------------------------------------------------------------------
 # The   BEGINNING-TO-END   pattern:
 # -----------------------------------------------------------------------------
@@ -155,7 +153,6 @@ def beginning_to_end(sequence):
         print(k)
 
     return count
-
 
 # -----------------------------------------------------------------------------
 # The   OTHER-RANGES   pattern:
@@ -235,7 +232,6 @@ def other_ranges(sequence):
         print(sequence[m])
         m = m - 3
 
-
 # -----------------------------------------------------------------------------
 # The   FIND   pattern, in its several variations:
 # -----------------------------------------------------------------------------
@@ -286,7 +282,6 @@ def find(sequence):
     print('    -- Index of found item:', answer2)
     print('    -- Item that was found:', answer3)
 
-
 def find_example1(sequence):
     """
     Returns True if the given sequence contains a string,
@@ -298,7 +293,6 @@ def find_example1(sequence):
             return True
 
     return False
-
 
 def find_example2(sequence):
     """
@@ -312,7 +306,6 @@ def find_example2(sequence):
 
     return -1
 
-
 def find_example3(sequence):
     """
     Returns the FIRST STRING in the given sequence,
@@ -324,7 +317,6 @@ def find_example3(sequence):
             return sequence[k]
 
     return None
-
 
 # -----------------------------------------------------------------------------
 # The   MAX/MIN   pattern, in several variations:
@@ -377,7 +369,6 @@ def max_min(sequence):
     print('That item is', sequence[answer3])
     print('Its cosine is', math.cos(sequence[answer3]))
 
-
 def min_index(sequence):
     """
     Returns the index of the smallest item in the given sequence.
@@ -394,7 +385,6 @@ def min_index(sequence):
 
     return index_of_min
 
-
 def min_item(sequence):
     """
     Returns the smallest item in the given sequence.
@@ -407,7 +397,6 @@ def min_item(sequence):
     # -------------------------------------------------------------------------
     index_of_min = min_index(sequence)
     return sequence[index_of_min]
-
 
 def min_cosine(sequence):
     """
@@ -426,7 +415,6 @@ def min_cosine(sequence):
             index_of_min = k
 
     return index_of_min
-
 
 # -----------------------------------------------------------------------------
 # The   TWO-PLACES-AT-ONCE   pattern:
@@ -461,7 +449,6 @@ def two_places_at_once(sequence):
             count = count + 1
 
     return count
-
 
 # -----------------------------------------------------------------------------
 # The   TWO-SEQUENCES-IN-PARALLEL   pattern:

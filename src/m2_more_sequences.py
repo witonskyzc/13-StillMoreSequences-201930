@@ -11,9 +11,8 @@ for ITERATING through SEQUENCES, including selections from:
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
-
+         and Zach Witonsky.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 def main():
     """ Calls the   TEST   functions in this module. """
@@ -22,7 +21,6 @@ def main():
     run_test_number_of_stutters()
     run_test_is_palindrome()
     run_test_count_same()
-
 
 # -----------------------------------------------------------------------------
 # Some problems iterate (loop) through the sequence to find the LARGEST
@@ -77,7 +75,6 @@ def run_test_shortest_string():
     if expected != answer:
         print('  Your answer is WRONG.')
 
-
 def shortest_string(strings):
     """
     What comes in:
@@ -104,10 +101,17 @@ def shortest_string(strings):
       :type strings: list[str]   or tuple(str)
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
 
+    index_of_min = 0
+    for k in range(1, len(strings)):
+
+        if len(strings[k]) < len(strings[index_of_min]):
+            index_of_min = k
+
+    return strings[index_of_min]
 
 def run_test_index_of_largest_number():
     """ Tests the   index_of_largest_number   function. """
@@ -148,7 +152,6 @@ def run_test_index_of_largest_number():
                                      2)
     print('Expected and actual are:', expected, answer)
 
-
 def index_of_largest_number(numbers, n):
     """
     What comes in:
@@ -181,10 +184,16 @@ def index_of_largest_number(numbers, n):
 
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
 
+    index_of_max = 0
+    for k in range(0, n):
+        if numbers[k] > numbers[index_of_max]:
+            index_of_max = k
+
+    return index_of_max
 
 # -----------------------------------------------------------------------------
 # Some problems iterate (loop) through the sequence accessing TWO
@@ -217,7 +226,6 @@ def run_test_number_of_stutters():
     answer = number_of_stutters('xxxyyyxxxx')
     print('Expected and actual are:', expected, answer)
 
-
 def number_of_stutters(s):
     """
     What comes in:
@@ -236,10 +244,16 @@ def number_of_stutters(s):
        :type s: str
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
 
+    num_times = 0
+    for k in range(len(s)-1):
+        for x in range(len(s[k])):
+            if s[k][x] == s[k - 1]:
+                num_times = num_times + 1
+    return num_times
 
 def run_test_is_palindrome():
     """ Tests the   is_palindrome   function. """
@@ -279,7 +293,6 @@ def run_test_is_palindrome():
     if answer6 is not True:
         print('Your code failed the 6th test for   is_palindrome.')
 
-
 def is_palindrome(s):
     """
     What comes in:
@@ -309,7 +322,7 @@ def is_palindrome(s):
       :type s: str
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #     The testing code is already written for you (above).
     #
     ###########################################################################
@@ -319,6 +332,14 @@ def is_palindrome(s):
     ###########################################################################
     # -------------------------------------------------------------------------
 
+    value = True
+    for k in range(len(s)):
+        if (s[k]) == (s[len(s)-1-(k)]):
+            value = True
+        else:
+            value = False
+            break
+    return value
 
 # -----------------------------------------------------------------------------
 # Some problems loop (iterate) through two or more sequences
@@ -345,7 +366,6 @@ def run_test_count_same():
     answer = count_same([1, 44, 55, 88, 44],
                         [0, 43, 77, 8, 4])
     print('Expected and actual are:', expected, answer)
-
 
 def count_same(sequence1, sequence2):
     """
@@ -376,10 +396,16 @@ def count_same(sequence1, sequence2):
       type: sequence2: tuple or list or string
     """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #     The testing code is already written for you (above).
     # -------------------------------------------------------------------------
 
+    count = 0
+    for k in range(len(sequence1)):
+        if sequence1[k] == sequence2[k]:
+            count = count + 1
+
+    return count
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
